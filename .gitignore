@@ -2,3 +2,5 @@
 .venv
 .env
 /__pycache__
+state.json
+/tests/__pycache__
