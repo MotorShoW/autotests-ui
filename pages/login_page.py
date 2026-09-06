@@ -5,7 +5,7 @@ from pages.base_page import BasePage
 
 class LoginPage(BasePage):
     def __init__(self, page: Page):
-        super().__init__(page)
+        super().__init__(page, 'https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/login')
 
         self.email_input = page.get_by_test_id('login-form-email-input').locator('input')
         self.password_input = page.get_by_test_id('login-form-password-input').locator('input')

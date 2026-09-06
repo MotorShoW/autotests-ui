@@ -7,3 +7,5 @@ state.json
 browser-state.json
 fixtures/__pycache__/__init__.cpython-313.pyc
 fixtures/__pycache__/browsers.cpython-313-pytest-9.1.1.pyc
+/fixtures/__pycache__
+/pages/__pycache__

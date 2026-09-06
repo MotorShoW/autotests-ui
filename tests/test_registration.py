@@ -1,34 +1,17 @@
-from playwright.sync_api import sync_playwright, expect
 import pytest
+
+from pages.registration_page import RegistrationPage
+from pages.dashboard_page import DashboardPage
 
 
 @pytest.mark.regression
 @pytest.mark.registration
-def test_successful_registration():
-    with sync_playwright() as playwright:
-        browser = playwright.chromium.launch(headless=True)
-        page = browser.new_page()
-
-        page.goto('https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/registration')
-
-        email_input = page.get_by_test_id('registration-form-email-input').locator('input')
-        expect(email_input).to_be_visible()
-        email_input.fill('user.name@gmail.com')
-
-        username_input = page.get_by_test_id('registration-form-username-input').locator('input')
-        expect(username_input).to_be_visible()
-        username_input.fill('username')
-
-        password_input = page.get_by_test_id('registration-form-password-input').locator('input')
-        expect(password_input).to_be_visible()
-        password_input.fill('password')
-
-        registration_button = page.get_by_test_id('registration-page-registration-button')
-        expect(registration_button).to_be_visible()
-        registration_button.click()
-
-        expect(page).to_have_url('https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/dashboard')
-
-        dashboard_title = page.get_by_test_id('dashboard-toolbar-title-text')
-        expect(dashboard_title).to_be_visible()
-        expect(dashboard_title).to_have_text('Dashboard')
+def test_successful_registration(registration_page: RegistrationPage, dashboard_page: DashboardPage):
+    registration_page.visit()
+    registration_page.fill_registration_form(
+        email='user.name@gmail.com',
+        username='username',
+        password='password')
+    registration_page.click_registration_button()
+    dashboard_page.check_dashboard_is_opened()
+    dashboard_page.check_dashboard_title_to_have_text('Dashboard')
