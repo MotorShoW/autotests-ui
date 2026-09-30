@@ -9,3 +9,9 @@ fixtures/__pycache__/__init__.cpython-313.pyc
 fixtures/__pycache__/browsers.cpython-313-pytest-9.1.1.pyc
 /fixtures/__pycache__
 /pages/__pycache__
+components/__pycache__/__init__.cpython-313.pyc
+components/__pycache__/base_component.cpython-313.pyc
+components/navigation/__pycache__/__init__.cpython-313.pyc
+components/navigation/__pycache__/navbar_component.cpython-313.pyc
+components/navigation/__pycache__/sidebar_component.cpython-313.pyc
+components/navigation/__pycache__/sidebar_list_item_component.cpython-313.pyc
