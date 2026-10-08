@@ -15,3 +15,5 @@ components/navigation/__pycache__/__init__.cpython-313.pyc
 components/navigation/__pycache__/navbar_component.cpython-313.pyc
 components/navigation/__pycache__/sidebar_component.cpython-313.pyc
 components/navigation/__pycache__/sidebar_list_item_component.cpython-313.pyc
+/components/authentication/__pycache__
+*.pyc
