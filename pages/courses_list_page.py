@@ -18,23 +18,10 @@ class CoursesListPage(BasePage):
         self.course_view = CourseViewComponent(page)
         self.toolbar_view = CoursesListToolbarViewComponent(page)
 
-        self.courses_title = page.get_by_test_id('courses-list-toolbar-title-text')
-        self.create_course_button = page.get_by_test_id('courses-list-toolbar-create-course-button')
-
-        self.course_title = page.get_by_test_id('course-widget-title-text')
-        self.course_image = page.get_by_test_id('course-preview-image')
-        self.course_max_score_text = page.get_by_test_id('course-max-score-info-row-view-text')
-        self.course_min_score_text = page.get_by_test_id('course-min-score-info-row-view-text')
-        self.course_estimated_time_text = page.get_by_test_id('course-estimated-time-info-row-view-text')
-
-        self.course_menu_button = page.get_by_test_id('course-view-menu-button')
-        self.course_edit_menu_item = page.get_by_test_id('course-view-edit-menu-item')
-        self.course_delete_menu_item = page.get_by_test_id('course-view-delete-menu-item')
-
 
     def check_visible_courses_title(self):
-        expect(self.courses_title).to_be_visible()
-        expect(self.courses_title).to_have_text('Courses')
+        expect(self.toolbar_view.title).to_be_visible()
+        expect(self.toolbar_view.title).to_have_text('Courses')
 
     def check_visible_empty_view(self):
         self.empty_view.check_visible(

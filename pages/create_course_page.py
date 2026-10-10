@@ -25,54 +25,7 @@ class CreateCoursePage(BasePage):
         self.create_course_toolbar = CreateCourseToolbarViewComponent(page)
 
 
-    def check_visible_create_course_toolbar(self):
-        self.create_course_toolbar.check_visible(title='Create course', is_create_course_disabled=True)
-
-    def click_create_course_button(self):
-        self.create_course_toolbar.click_create_course_button()
-
-    def check_enabled_create_course_button(self):
-        self.create_course_toolbar.check_visible(title='Create course', is_create_course_disabled=False)
-
-    def check_disabled_create_course_button(self):
-        self.create_course_toolbar.check_visible(title='Create course', is_create_course_disabled=True)
-
-    def check_visible_create_course_form(
-            self,
-            title: str,
-            estimated_time: str,
-            description: str,
-            max_score: str,
-            min_score: str
-    ):
-        self.create_course_form.check_visible(title, estimated_time, description, max_score, min_score)
-
-    def fill_create_course_form(
-            self,
-            title: str,
-            estimated_time: str,
-            description: str,
-            max_score: str,
-            min_score: str
-    ):
-        self.create_course_form.fill(title, estimated_time, description, max_score, min_score)
-
-    def check_visible_exercises_title(self):
-        self.create_exercise_toolbar.check_visible(title='Exercises')
-
-    def click_create_exercise_button(self):
-        self.create_exercise_toolbar.click_create_course_button()
-
     def check_visible_exercises_empty_view(self):
         self.exercises_empty_view.check_visible(
             title='There is no exercises', description='Click on "Create exercise" button to create new exercise'
         )
-
-    def click_delete_exercise_button(self, index: int):
-        self.create_exercise_form.click_delete_button(index)
-
-    def check_visible_create_exercise_form(self, index: int, title: str, description: str):
-        self.create_exercise_form.check_visible(index, title, description)
-
-    def fill_create_exercise_form(self, index: int, title: str, description: str):
-        self.create_exercise_form.fill(index, title, description)

@@ -15,14 +15,14 @@ class CreateCourseFormComponent(BaseComponent):
         self.max_score_input = page.get_by_test_id('create-course-form-max-score-input').locator('input')
         self.min_score_input = page.get_by_test_id('create-course-form-min-score-input').locator('input')
 
-    def fill(self, title: str, estimated_time: str, description_text: str, max_score: str, min_score: str):
+    def fill(self, title: str, estimated_time: str, description: str, max_score: str, min_score: str):
         self.title_input.fill(title)
         self.estimated_time_input.fill(estimated_time)
-        self.description_textarea.fill(description_text)
+        self.description_textarea.fill(description)
         self.max_score_input.fill(max_score)
         self.min_score_input.fill(min_score)
 
-    def check_visible(self, title: str, estimated_time: str, description_text: str, max_score: str, min_score: str):
+    def check_visible(self, title: str, estimated_time: str, description: str, max_score: str, min_score: str):
         expect(self.title_input).to_be_visible()
         expect(self.title_input).to_have_text(title)
 
@@ -30,7 +30,7 @@ class CreateCourseFormComponent(BaseComponent):
         expect(self.estimated_time_input).to_have_text(estimated_time)
 
         expect(self.description_textarea).to_be_visible()
-        expect(self.description_textarea).to_have_text(description_text)
+        expect(self.description_textarea).to_have_text(description)
 
         expect(self.max_score_input).to_be_visible()
         expect(self.max_score_input).to_have_value(max_score)
