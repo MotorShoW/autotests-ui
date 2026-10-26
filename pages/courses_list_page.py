@@ -20,8 +20,8 @@ class CoursesListPage(BasePage):
 
 
     def check_visible_courses_title(self):
-        expect(self.toolbar_view.title).to_be_visible()
-        expect(self.toolbar_view.title).to_have_text('Courses')
+        self.toolbar_view.title.check_visible()
+        self.toolbar_view.title.check_have_text('Courses')
 
     def check_visible_empty_view(self):
         self.empty_view.check_visible(
