@@ -5,11 +5,12 @@ from components.dashboard.dashboard_toolbar_view_component import DashboardToolb
 from components.navigation.navbar_component import NavbarComponent
 from components.navigation.sidebar_component import SidebarComponent
 from pages.base_page import BasePage
+from tools.routes import AppRoute
 
 
 class DashboardPage(BasePage):
     def __init__(self, page: Page):
-        super().__init__(page, url='https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/dashboard')
+        super().__init__(page, url=AppRoute.DASHBOARD)
 
         self.sidebar = SidebarComponent(page)
         self.navbar = NavbarComponent(page)

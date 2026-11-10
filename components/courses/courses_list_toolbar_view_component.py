@@ -5,6 +5,7 @@ from playwright.sync_api import Page
 from components.base_component import BaseComponent
 from elements.button import Button
 from elements.text import Text
+from tools.routes import AppRoute
 
 
 class CoursesListToolbarViewComponent(BaseComponent):
@@ -25,4 +26,4 @@ class CoursesListToolbarViewComponent(BaseComponent):
 
     def click_create_course_button(self):
         self.create_course_button.click()
-        self.check_current_url(re.compile(".*/#/courses/create"))
+        self.check_current_url(re.compile(AppRoute.CREATE_COURSE))

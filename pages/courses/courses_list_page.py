@@ -6,11 +6,12 @@ from components.navigation.navbar_component import NavbarComponent
 from components.navigation.sidebar_component import SidebarComponent
 from components.views.empty_view_component import EmptyViewComponent
 from pages.base_page import BasePage
+from tools.routes import AppRoute
 
 
 class CoursesListPage(BasePage):
     def __init__(self, page: Page):
-        super().__init__(page, 'https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/courses')
+        super().__init__(page, url=AppRoute.COURSES)
 
         self.sidebar = SidebarComponent(page)
         self.navbar = NavbarComponent(page)

@@ -9,11 +9,12 @@ from components.navigation.sidebar_component import SidebarComponent
 from components.views.empty_view_component import EmptyViewComponent
 from components.views.image_upload_widget_component import ImageUploadWidgetComponent
 from pages.base_page import BasePage
+from tools.routes import AppRoute
 
 
 class CreateCoursePage(BasePage):
     def __init__(self, page: Page):
-        super().__init__(page, 'https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/courses/create')
+        super().__init__(page, url=AppRoute.CREATE_COURSE)
 
         self.sidebar = SidebarComponent(page)
         self.navbar = NavbarComponent(page)
